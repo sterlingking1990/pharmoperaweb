@@ -1,5 +1,3 @@
-# Update the Dockerfile
-@"
 FROM node:22.12.0-alpine
 
 WORKDIR /app
@@ -17,4 +15,3 @@ RUN npm install -g serve
 EXPOSE 8080
 
 CMD ["serve", "-s", "dist", "--listen", "0.0.0.0:8080", "--no-clipboard"]
-"@ | Out-File -FilePath Dockerfile -Encoding utf8
