@@ -10,7 +10,16 @@ COPY . .
 
 RUN npm run build
 
+# Verify build
+RUN echo "=== Build Verification ===" && \
+    ls -la dist/ && \
+    if [ -f "dist/index.html" ]; then \
+      echo "✅ index.html exists"; \
+    else \
+      echo "❌ ERROR: index.html missing!"; \
+      exit 1; \
+    fi
+
 EXPOSE 8080
 
-# Use npm start which runs: "serve -s dist -l 8080"
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
