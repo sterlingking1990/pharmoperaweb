@@ -3,20 +3,21 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-   "engines": {
-   "node": ">=22.12.0"
+  "engines": {
+    "node": ">=22.12.0"
   },
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview --host 0.0.0.0",
-  "start": "vite preview --host 0.0.0.0"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview --host 0.0.0.0",
+    "start": "serve -s dist -l $PORT"
+  },
   "dependencies": {
     "lucide-react": "^0.562.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "serve": "^14.2.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
