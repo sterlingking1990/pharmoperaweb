@@ -4,14 +4,19 @@ WORKDIR /app
 
 COPY package*.json ./
 
+# Install dependencies including express
 RUN npm install
+
+# Copy server file
+COPY server.js ./
 
 COPY . .
 
 RUN npm run build
 
-RUN npm install -g http-server
+# Verify build
+RUN ls -la dist/ && echo "Build completed successfully!"
 
 EXPOSE 8080
 
-CMD ["http-server", "dist", "-p", "8080", "-a", "0.0.0.0", "--silent"]
+CMD ["node", "server.js"]
