@@ -10,8 +10,6 @@ COPY . .
 
 RUN npm run build
 
-RUN npm install -g serve
-
 EXPOSE 8080
 
-CMD ["serve", "-s", "dist", "-p", "8080", "--no-clipboard"]
+CMD ["npx", "serve", "dist", "-l", "8080"]
