@@ -9,7 +9,7 @@ export default function PharmoperaWebsite() {
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: "Natural Conversation",
-      description: "Report prescriptions naturally via WhatsApp. Just type as you would speak to a colleague."
+      description: "Report prescriptions, naturally via WhatsApp. Just type as you would speak to a colleague."
     },
     {
       icon: <Phone className="w-6 h-6" />,
