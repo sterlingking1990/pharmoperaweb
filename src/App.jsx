@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pill, MessageSquare, BarChart3, Users, Clock, CheckCircle, ArrowRight, Menu, X, Zap, Shield, TrendingUp } from 'lucide-react';
+import { Pill, MessageSquare, BarChart3, Users, Clock, CheckCircle, ArrowRight, Menu, X, Zap, Shield, TrendingUp, Phone } from 'lucide-react';
 
 export default function PharmoperaWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
