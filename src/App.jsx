@@ -49,7 +49,7 @@ export default function PharmoperaWebsite() {
       { day: 'Sun', rate: 75 }
     ],
     medications: [
-      { name: 'Artemeter', count: 45 },
+      { name: 'artemether lumefantrine', count: 45 },
       { name: 'Amoxicillin', count: 38 },
       { name: 'Metformin', count: 32 },
       { name: 'Lisinopril', count: 28 }
@@ -151,14 +151,14 @@ export default function PharmoperaWebsite() {
               </div>
               <div className="bg-white rounded-lg p-4 mb-3 shadow-sm">
                 <p className="text-sm text-gray-700">
-                  "Melinda whose phone number is 2348012345890 diagnosed of malaria is going to be on artemeter for 3 days and will take the medicine one tablet three times a day; after completion, there will be a follow-up to know how she is doing"
+                  "Melinda whose phone number is 2348012345890 diagnosed of malaria is going to be on artemether lumefantrine for 3 days and will take the medicine one tablet three times a day; after completion, there will be a follow-up to know how she is doing"
                 </p>
               </div>
               <div className="bg-blue-600 text-white rounded-lg p-4 ml-8 shadow-sm">
                 <p className="text-sm">
                   ✓ Prescription recorded for Melinda<br/>
                   ✓ WellLink reminders activated<br/>
-                  ✓ Follow-up scheduled for 3 days
+                  ✓ Follow-up scheduled on complettion of medication
                 </p>
               </div>
             </div>
