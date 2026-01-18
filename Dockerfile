@@ -22,4 +22,4 @@ RUN echo "=== Build Verification ===" && \
 
 EXPOSE 8080
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
