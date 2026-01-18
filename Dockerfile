@@ -24,4 +24,5 @@ RUN npm install -g serve
 
 EXPOSE 8080
 
-CMD ["serve", "-s", "dist", "--listen", "0.0.0.0:8080", "--no-clipboard"]
+# Use correct serve syntax with -l for port only
+CMD sh -c "serve -s dist -l ${PORT:-8080} --no-clipboard"
