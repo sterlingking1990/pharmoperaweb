@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "start": "sh -c 'serve -s dist -l tcp://0.0.0.0:$PORT'"
+    "start": "sh -c 'echo $PORT'"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
