@@ -1,0 +1,9 @@
+so when the user click start free trial, i will like to display a form where they will provide certain onboarding  │
+│   details now this form should at the moment collect information such as name of the health center, address or       │
+│   location where this health center operates, the phone number to they will use to chat with pharmopera on whatsapp  │
+│   to report the prescription of their patient, their email address which could be optional. they should see on the   │
+│   form; what you receive after onboarding - 1) they will receive pharmopera link and sample prescriptions set by     │
+│   other health centers as a guide for them to begin using pharmopera on their center. 2) they will receive their     │
+│   login detail to their dashboard. Now when they click on onboard me, it should call the make.com webhook            │
+│   https://hook.eu2.make.com/kjnoq2r0fe08yoninaqyk1d9pat0ti5v and then send as json all the data that has been        │
+│   collected.    

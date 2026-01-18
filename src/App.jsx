@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Pill, MessageSquare, BarChart3, Users, Clock, CheckCircle, ArrowRight, Menu, X, Zap, Shield, TrendingUp, Phone } from 'lucide-react';
+import OnboardingForm from './OnboardingForm';
 
 export default function PharmoperaWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('adherence');
+  const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
+
+  const openOnboarding = () => setIsOnboardingOpen(true);
+  const closeOnboarding = () => setIsOnboardingOpen(false);
 
   const features = [
     {
@@ -58,8 +63,10 @@ export default function PharmoperaWebsite() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+      {isOnboardingOpen && <OnboardingForm onClose={closeOnboarding} />}
+
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
@@ -79,7 +86,7 @@ export default function PharmoperaWebsite() {
             </div>
 
             <div className="hidden md:block">
-              <button className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">
+              <button onClick={openOnboarding} className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">
                 Get Started
               </button>
             </div>
@@ -100,7 +107,7 @@ export default function PharmoperaWebsite() {
               <a href="#how-it-works" className="block text-gray-700">How It Works</a>
               <a href="#analytics" className="block text-gray-700">Analytics</a>
               <a href="#pricing" className="block text-gray-700">Pricing</a>
-              <button className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg">
+              <button onClick={openOnboarding} className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg">
                 Get Started
               </button>
             </div>
@@ -119,7 +126,7 @@ export default function PharmoperaWebsite() {
               WhatsApp-powered prescription management that connects pharmacies, healthcare providers, and patients for better medication adherence and outcomes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition flex items-center justify-center">
+              <button onClick={openOnboarding} className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition flex items-center justify-center">
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
               </button>
               <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition">
@@ -324,7 +331,7 @@ export default function PharmoperaWebsite() {
                   <span className="text-gray-700">24/7 customer support</span>
                 </li>
               </ul>
-              <button className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition">
+              <button onClick={openOnboarding} className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition">
                 Start Your Free Trial
               </button>
               <p className="text-center text-sm text-gray-500 mt-4">No credit card required • Cancel anytime</p>
@@ -339,7 +346,7 @@ export default function PharmoperaWebsite() {
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Patient Care?</h2>
           <p className="text-xl text-blue-100 mb-8">Join healthcare providers improving medication adherence and patient outcomes with PharmOpera</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl transition">
+            <button onClick={openOnboarding} className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl transition">
               Get Started Free
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition">
