@@ -62,20 +62,3 @@ const server = app.listen(port, '0.0.0.0', () => {
   console.log(`✅ Root: http://0.0.0.0:${port}/`);
   console.log(`📦 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
-
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('🛑 SIGTERM received, shutting down gracefully...');
-  server.close(() => {
-    console.log('✅ Server closed');
-    process.exit(0);
-  });
-});
-
-process.on('SIGINT', () => {
-  console.log('🛑 SIGINT received, shutting down gracefully...');
-  server.close(() => {
-    console.log('✅ Server closed');
-    process.exit(0);
-  });
-});
