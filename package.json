@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "start": "serve -s dist"
+    "start": "node server.js"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",

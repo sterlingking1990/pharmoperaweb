@@ -1,17 +1,13 @@
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    host: '0.0.0.0',
-    port: parseInt(process.env.PORT) || 5173
-  },
-  preview: {
-    host: '0.0.0.0',
-    port: parseInt(process.env.PORT) || 4173
-  },
   build: {
-    outDir: 'dist'
-  }
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
+  // Optional: for Railway deployment
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
 })

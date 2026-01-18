@@ -4,25 +4,32 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+# Install all dependencies (including dev) for build
+RUN npm ci
 
 COPY . .
 
+# Build the React app
 RUN npm run build
 
-# Verify build
+# Clean up dev dependencies to reduce image size
+RUN npm prune --production
+
+# Debug build output
 RUN echo "=== Build Verification ===" && \
+    echo "Dist directory contents:" && \
     ls -la dist/ && \
+    echo "Checking for index.html..." && \
     if [ -f "dist/index.html" ]; then \
       echo "✅ index.html exists"; \
+      echo "File size:" && du -h dist/index.html; \
     else \
       echo "❌ ERROR: index.html missing!"; \
+      echo "Listing all files in dist:" && find dist -type f; \
       exit 1; \
     fi
 
-RUN npm install -g serve
-
 EXPOSE 8080
 
-# Use correct serve syntax with -l for port only
-CMD sh -c "serve -s dist -l ${PORT:-8080} --no-clipboard"
+# Use Express server to serve the built app
+CMD ["node", "server.js"]
