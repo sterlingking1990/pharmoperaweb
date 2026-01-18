@@ -158,7 +158,7 @@ export default function PharmoperaWebsite() {
                 <p className="text-sm">
                   ✓ Prescription recorded for Melinda<br/>
                   ✓ WellLink reminders activated<br/>
-                  ✓ Follow-up scheduled on complettion of medication
+                  ✓ Follow-up scheduled on completion of medication
                 </p>
               </div>
             </div>
