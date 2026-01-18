@@ -20,6 +20,8 @@ RUN echo "=== Build Verification ===" && \
       exit 1; \
     fi
 
+RUN npm install -g serve
+
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["serve", "-s", "dist", "--listen", "0.0.0.0:8080", "--no-clipboard"]
