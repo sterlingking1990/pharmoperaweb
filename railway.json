@@ -8,7 +8,7 @@
     "restartPolicyMaxRetries": 10
   },
   "healthcheck": {
-    "path": "/",
+    "path": "/health",
     "interval": 30,
     "timeout": 10,
     "retries": 3

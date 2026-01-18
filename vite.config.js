@@ -7,7 +7,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    // Production optimizations
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
+    },
   },
-  // Optional: for Railway deployment
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',
 })
