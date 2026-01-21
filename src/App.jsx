@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { Pill, MessageSquare, BarChart3, Users, Clock, CheckCircle, ArrowRight, Menu, X, Zap, Shield, TrendingUp, Phone } from 'lucide-react';
 import OnboardingForm from './OnboardingForm';
+import VideoModal from './VideoModal';
+import './VideoModal.css';
 
 export default function PharmoperaWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('adherence');
   const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
+  const [isDemoVideoOpen, setIsDemoVideoOpen] = useState(false);
 
   const openOnboarding = () => setIsOnboardingOpen(true);
   const closeOnboarding = () => setIsOnboardingOpen(false);
+
+  const openDemoVideo = () => setIsDemoVideoOpen(true);
+  const closeDemoVideo = () => setIsDemoVideoOpen(false);
 
   const features = [
     {
@@ -64,6 +70,7 @@ export default function PharmoperaWebsite() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {isOnboardingOpen && <OnboardingForm onClose={closeOnboarding} />}
+      {isDemoVideoOpen && <VideoModal videoId="S_lXJOOC0WM" onClose={closeDemoVideo} />}
 
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-40">
@@ -129,7 +136,7 @@ export default function PharmoperaWebsite() {
               <button onClick={openOnboarding} className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition flex items-center justify-center">
                 Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition">
+              <button onClick={openDemoVideo} className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition">
                 Watch Demo
               </button>
             </div>
