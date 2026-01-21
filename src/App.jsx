@@ -127,10 +127,10 @@ export default function PharmoperaWebsite() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Healthcare Management, <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Simplified</span>
+              Improve Patient Adherence, <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Effortlessly</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              WhatsApp-powered prescription management that connects pharmacies, healthcare providers, and patients for better medication adherence and outcomes.
+              Use WhatsApp and our simple dashboard to send automated prescription reminders and track patient progress.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={openOnboarding} className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition flex items-center justify-center">
