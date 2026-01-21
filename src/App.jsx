@@ -165,7 +165,7 @@ export default function PharmoperaWebsite() {
               </div>
               <div className="bg-white rounded-lg p-4 mb-3 shadow-sm">
                 <p className="text-sm text-gray-700">
-                  "Melinda, whose phone number is 2348012345890, has been diagnosed with malaria. She will be treated with artemether–lumefantrine for 3 days, taking one tablet twice daily. After completing the medication, a follow-up will be conducted to assess her condition."
+                  Melinda, whose phone number is 2348012345890, has been diagnosed with malaria. She will be treated with artemether–lumefantrine for 3 days, taking one tablet twice daily. After completing the medication, a follow-up will be conducted to assess her condition.
                 </p>
               </div>
               <div className="bg-blue-600 text-white rounded-lg p-4 ml-8 shadow-sm">
