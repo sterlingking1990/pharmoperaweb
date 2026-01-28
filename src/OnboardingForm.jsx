@@ -14,7 +14,28 @@ export default function OnboardingForm({ onClose }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (name === 'whatsappNumber') {
+      let cleanValue = value.replace(/\D/g, ''); // Remove all non-digit characters
+      let formattedValue = cleanValue;
+
+      // If it starts with '0', replace with '234'
+      if (cleanValue.startsWith('0')) {
+        formattedValue = '234' + cleanValue.substring(1);
+      }
+      // If it doesn't start with '234' and is not empty, prepend '234'
+      else if (cleanValue.length > 0 && !cleanValue.startsWith('234')) {
+        formattedValue = '234' + cleanValue;
+      }
+
+      // Ensure the length does not exceed 13 digits (234 + 10 digits)
+      if (formattedValue.length > 13) {
+        formattedValue = formattedValue.substring(0, 13);
+      }
+      setFormData((prev) => ({ ...prev, [name]: formattedValue }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -99,6 +120,7 @@ export default function OnboardingForm({ onClose }) {
                             onChange={handleChange}
                             placeholder="WhatsApp Phone Number"
                             required
+                            title="This is the number patients will reach out to for any questions about their medication reminder."
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         />
                         <input
