@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle } from 'lucide-react';
+import { X, CheckCircle, Info } from 'lucide-react';
 
 export default function OnboardingForm({ onClose }) {
   const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ export default function OnboardingForm({ onClose }) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', or 'error'
+  const [isInfoVisible, setIsInfoVisible] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -113,16 +114,29 @@ export default function OnboardingForm({ onClose }) {
                             required
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         />
-                        <input
-                            type="tel"
-                            name="whatsappNumber"
-                            value={formData.whatsappNumber}
-                            onChange={handleChange}
-                            placeholder="WhatsApp Phone Number"
-                            required
-                            title="This is the number patients will reach out to for any questions about their medication reminder."
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                        />
+                        <div className="relative">
+                            <input
+                                type="tel"
+                                name="whatsappNumber"
+                                value={formData.whatsappNumber}
+                                onChange={handleChange}
+                                placeholder="WhatsApp Phone Number"
+                                required
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                            />
+                            <Info
+                                size={18}
+                                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 cursor-pointer"
+                                onMouseEnter={() => setIsInfoVisible(true)}
+                                onMouseLeave={() => setIsInfoVisible(false)}
+                            />
+                            {isInfoVisible && (
+                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-xs bg-gray-800 text-white text-sm rounded-md px-3 py-2 shadow-lg">
+                                    This is the number patients would be able to reach out to anytime they receive their medicaiton reminder.
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-t-8 border-t-gray-800"></div>
+                                </div>
+                            )}
+                        </div>
                         <input
                             type="email"
                             name="email"
